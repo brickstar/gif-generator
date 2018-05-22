@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :username, presence: true
+  validates :username, uniqueness: true, presence: true
   validates :password, presence: true
 
   has_many :favorites, dependent: :destroy
