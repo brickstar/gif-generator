@@ -14,7 +14,6 @@ class Admin::GifsController < Admin::BaseController
 
     opts = {
       tag: @category.name
-      rating: 'g'
     }
 
     result = api_instance.gifs_random_get(api_key, opts)
