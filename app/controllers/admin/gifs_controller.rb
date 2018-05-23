@@ -10,13 +10,15 @@ class Admin::GifsController < Admin::BaseController
     @category = Category.find_or_create_by(name: params[:category])
     api_instance = GiphyClient::DefaultApi.new
 
-    api_key = 'jtXwcYzSbItmj65BK3Fp1I5plTdDi5gR'
+    api_key = ENV['giphy_api_key']
 
     opts = {
       tag: @category.name
     }
+
     result = api_instance.gifs_random_get(api_key, opts)
     @gif = @category.gifs.create(image_path: result.data.image_original_url)
+
     redirect_to gifs_path
   end
 end
