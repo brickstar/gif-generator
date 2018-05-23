@@ -13,7 +13,9 @@ describe 'User' do
       gif4 = category4.gifs.create!(image_path: 'https://media1.giphy.com/media/ow8luev3sOjO8/200w.webp')
 
       visit gifs_path
+save_and_open_page
 
+      expect(page).to have_content('cats')
       expect(page).to have_xpath("//img[@src='https://media1.giphy.com/media/JfDNFU1qOZna/200w.webp']")
     end
   end
