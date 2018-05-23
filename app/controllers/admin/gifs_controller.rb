@@ -16,7 +16,7 @@ class Admin::GifsController < Admin::BaseController
       tag: @category.name
     }
     result = api_instance.gifs_random_get(api_key, opts)
-    @gif = @category.gifs.create(image_path: result.data.fixed_height_downsampled_url)
+    @gif = @category.gifs.create(image_path: result.data.image_original_url)
     redirect_to gifs_path
   end
 end

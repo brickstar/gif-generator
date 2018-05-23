@@ -27,7 +27,7 @@ describe 'user visits gifs new page' do
     end
 
     it 'can create a new gif' do
-      skip
+      # skip
       admin = User.create(username: 'god', password: 'iamgod', role: 1)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
@@ -37,7 +37,7 @@ describe 'user visits gifs new page' do
       fill_in 'Category', with: 'cat'
 
       click_on 'generate gif'
-save_and_open_page
+
       expect(current_path).to eq(gifs_path)
       expect(page).to have_content('cat')
       expect(Gif.count).to eq(1)
