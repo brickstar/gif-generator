@@ -1,0 +1,9 @@
+<nav>
+  <% if current_user.default? %>
+    <%= link_to "Log out", root_path %>
+  <% else %>
+    <%= link_to "Register", new_user_path %>
+    <%= link_to "Log in", login_path %>
+  <% end %>
+</nav>
+<hr>

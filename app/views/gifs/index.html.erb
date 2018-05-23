@@ -1,0 +1,6 @@
+<% @categories.each do |category| %>
+  <% category.gifs.each do |gif| %>
+  <%= gif.category.name %></br>
+  <img src=<%= gif.image_path %>>
+  <% end %>
+<% end %>
