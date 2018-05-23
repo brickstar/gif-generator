@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
   resources :users, only: [:new, :create, :show]
-  resources :gifs
+  resources :gifs, only: [:index, :show]
+
+  namespace :admin do
+    resources :gifs
+  end
 end

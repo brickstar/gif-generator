@@ -1,4 +1,4 @@
-<% @gifs.each do |gif| %>
-  <%= image_tag("#{gif.image_path}") do %>
-  <% end %>
+<% @category.gifs.each do |gif| %>
+  <%= @category.name %>
+  <img src=<%= gif.image_path %>>
 <% end %>

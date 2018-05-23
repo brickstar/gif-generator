@@ -1,0 +1,6 @@
+<h1>Add a Gif!</h1>
+<%= form_tag admin_gifs_path do %>
+  <%= label_tag :category %>
+  <%= text_field_tag :category %>
+  <%= submit_tag 'generate gif' %>
+<% end %>

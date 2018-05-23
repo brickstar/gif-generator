@@ -3,7 +3,6 @@ require 'rails_helper'
 describe 'User' do
   describe 'visits /gifs/index' do
     it 'can see all the gifs' do
-      skip
       category1 = Category.create(name: 'cats')
       category2 = Category.create(name: 'frogs')
       category3 = Category.create(name: 'dogs')
@@ -15,7 +14,7 @@ describe 'User' do
 
       visit gifs_path
 
-      expect(page).to have_xpath("//img[@src=]'https://media1.giphy.com/media/JfDNFU1qOZna/200w.webp'")
+      expect(page).to have_xpath("//img[@src='https://media1.giphy.com/media/JfDNFU1qOZna/200w.webp']")
     end
   end
 end

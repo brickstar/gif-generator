@@ -1,5 +1,5 @@
 class GifsController < ApplicationController
   def index
-    @gifs = Gif.all
+    @category = Category.last
   end
 end
