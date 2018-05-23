@@ -9,7 +9,7 @@ describe 'User' do
 
       visit '/'
 
-      click_on 'Sign Up!'
+      click_on 'Sign Up'
 
       expect(current_path).to eq(new_user_path)
 
@@ -28,7 +28,7 @@ describe 'User' do
       user = User.create!(username: username, password: password)
       visit root_path
 
-      click_on 'Log in'
+      click_on 'Login'
 
       expect(current_path).to eq(login_path)
 

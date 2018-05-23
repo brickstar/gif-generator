@@ -7,7 +7,7 @@ describe 'User' do
 
       visit '/'
 
-      click_on 'I already have an account'
+      click_on 'Login'
 
       expect(current_path).to eq(login_path)
 
