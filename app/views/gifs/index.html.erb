@@ -1,7 +1,17 @@
-<%= link_to 'Generate Another Gif', new_admin_gif_path %></br></br>
-<% @categories.each do |category| %>
-  <% category.gifs.each do |gif| %></br>
-  <%= gif.category.name %></br>
-  <img src=<%= gif.image_path %>>
+<% if current_admin? %>
+  <%= link_to 'Generate Another Gif', new_admin_gif_path %></br></br>
+  <% @categories.each do |category| %>
+    <% category.gifs.each do |gif| %></br>
+    <%= gif.category.name %></br>
+    <img src=<%= gif.image_path %>>
+    <% end %>
+  <% end %>
+<% else %>
+  <% @categories.each do |category| %>
+    <%= link_to 'Add to Favorites', gifs_path, class: 'favorites-link' %>
+    <% category.gifs.each do |gif| %></br>
+    <%= gif.category.name %></br>
+    <img src=<%= gif.image_path %>></br></br></br></br>
+    <% end %>
   <% end %>
 <% end %>

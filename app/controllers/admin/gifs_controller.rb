@@ -10,7 +10,7 @@ class Admin::GifsController < Admin::BaseController
     @category = Category.find_or_create_by(name: params[:category])
     api_instance = GiphyClient::DefaultApi.new
 
-    api_key = ENV['giphy_api_key']
+    api_key = ENV['GIPHY_API_KEY']
 
     opts = {
       tag: @category.name
