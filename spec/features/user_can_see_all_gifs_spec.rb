@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'User' do
   describe 'visits /gifs/index' do
     it 'can see all the gifs and categories' do
+      skip
       category1 = Category.create(name: 'cats')
       category2 = Category.create(name: 'frogs')
       category3 = Category.create(name: 'dogs')
