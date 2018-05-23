@@ -12,7 +12,7 @@ describe 'User' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit gifs_path
-
+byebug
       expect(page).to have_link('Add to Favorites')
 
       click_on 'Add to Favorites'
