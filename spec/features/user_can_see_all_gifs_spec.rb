@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User' do
   describe 'visits /gifs/index' do
-    it 'can see all the gifs' do
+    it 'can see all the gifs and categories' do
       category1 = Category.create(name: 'cats')
       category2 = Category.create(name: 'frogs')
       category3 = Category.create(name: 'dogs')
@@ -13,7 +13,6 @@ describe 'User' do
       gif4 = category4.gifs.create!(image_path: 'https://media1.giphy.com/media/ow8luev3sOjO8/200w.webp')
 
       visit gifs_path
-save_and_open_page
 
       expect(page).to have_content('cats')
       expect(page).to have_xpath("//img[@src='https://media1.giphy.com/media/JfDNFU1qOZna/200w.webp']")
