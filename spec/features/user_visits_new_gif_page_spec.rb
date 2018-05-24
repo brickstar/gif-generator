@@ -33,7 +33,7 @@ describe 'user visits gifs new page' do
 
       visit new_admin_gif_path
 
-      fill_in 'Category', with: 'cat'
+      fill_in 'Category', with: 'dogcat'
 
       click_on 'generate gif'
 

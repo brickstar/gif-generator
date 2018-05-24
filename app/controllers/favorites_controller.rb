@@ -1,6 +1,8 @@
 class FavoritesController < ApplicationController
+
   def create
     Favorite.create(gif_id: params[:gif], user_id: params[:user_id])
+    redirect_to gifs_path
   end
 end
 # strong params

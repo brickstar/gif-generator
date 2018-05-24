@@ -4,6 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    user = User.find(params[:id])
+    @favorites = Favorite.where(user_id: user.id)
+    @gifs = @favorites.map do |favorite|
+      Gif.find_by("id = #{favorite.gif_id}")
+    end
   end
 
   def create
