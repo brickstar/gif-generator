@@ -4,6 +4,7 @@ describe 'User' do
   let(:user) { User.create(username: 'pearl', password: 'blank', role: 0) }
   # block won't execute until user is called - way around this is to use let!
   describe 'visits gifs index page' do
+    let!(:category) { FactoryBot.create(:category) }
     let!(:gif) { FactoryBot.create(:gif) }
     # scoping this variable to this describe block - only avail in this describe block
     # describe and context creates the hierarchy, cannot use let inside it block
@@ -13,13 +14,16 @@ describe 'User' do
 
       visit gifs_path
 
-      expect(page).to have_link('Add to Favorites')
-
+      expect(page).to have_button('Add to Favorites')
+      # within(".#{gif.id}") do
       click_on 'Add to Favorites'
+      # end
 
       expect(current_path).to eq(gifs_path)
 
       expect(user.favorites.count).to eq(1)
+
+      expect(page).to have_link('Go to My Gifs')
     end
   end
 end

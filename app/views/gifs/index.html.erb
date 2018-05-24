@@ -7,9 +7,13 @@
     <% end %>
   <% end %>
 <% else %>
+<%= link_to 'Go to My Gifs', user_path(current_user) %>
   <% @categories.each do |category| %>
-    <%= link_to 'Add to Favorites', gifs_path, class: 'favorites-link' %>
     <% category.gifs.each do |gif| %></br>
+    <%= form_tag user_favorites_path(current_user) do %>
+      <%= hidden_field_tag 'gif', gif.id %>
+      <%= submit_tag 'Add to Favorites', class: 'gif.id'%>
+    <% end %>
     <%= gif.category.name %></br>
     <img src=<%= gif.image_path %>></br></br></br></br>
     <% end %>

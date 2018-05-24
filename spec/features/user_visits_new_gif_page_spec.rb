@@ -27,14 +27,13 @@ describe 'user visits gifs new page' do
     end
 
     it 'can create a new gif' do
-      # skip
       admin = User.create(username: 'god', password: 'iamgod', role: 1)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit new_admin_gif_path
 
-      fill_in 'Category', with: 'cat'
+      fill_in 'Category', with: 'dogcat'
 
       click_on 'generate gif'
 
