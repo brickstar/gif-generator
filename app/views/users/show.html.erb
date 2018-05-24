@@ -1,10 +1,10 @@
-<h1>Welcome, <%= current_user.username %>!</h1>
+
+<div class="home-show">
+<h1 class='welcome-box'>Welcome, <%= current_user.username %>!</h1>
   <% if current_user.admin? %>
     <%= link_to 'Generate Gif', new_admin_gif_path %>
-    <%= link_to 'Log out', root_path %>
-  <% else %>
-    <%= link_to 'Log out', root_path %>
   <% end %>
+</div>
 <div class="gif-container">
   <div class='gif-total'><% @gifs.each do |gif| %>
     <section>
