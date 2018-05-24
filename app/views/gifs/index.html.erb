@@ -1,21 +1,25 @@
 <% if current_admin? %>
   <%= link_to 'Generate Another Gif', new_admin_gif_path %></br></br>
-  <% @categories.each do |category| %>
-    <% category.gifs.each do |gif| %></br>
-    <%= gif.category.name %></br>
-    <img src=<%= gif.image_path %>>
+  <div class="gif-container">
+    <% @categories.each do |category| %>
+      <% category.gifs.each do |gif| %></br>
+      <%= gif.category.name %></br>
+      <img src=<%= gif.image_path %>>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 <% else %>
 <%= link_to 'Go to My Gifs', user_path(current_user) %>
+<div class="gif-container">
   <% @categories.each do |category| %>
     <% category.gifs.each do |gif| %></br>
-    <%= form_tag user_favorites_path(current_user) do %>
-      <%= hidden_field_tag 'gif', gif.id %>
-      <%= submit_tag 'Add to Favorites', class: 'gif.id'%>
-    <% end %>
-    <%= gif.category.name %></br>
-    <img src=<%= gif.image_path %>></br></br></br></br>
+      <%= form_tag user_favorites_path(current_user) do %>
+        <%= hidden_field_tag 'gif', gif.id %>
+        <%= submit_tag 'Add to Favorites', class: 'gif.id'%>
+      <% end %>
+      <%= gif.category.name %></br>
+      <img src=<%= gif.image_path %>></br></br></br></br>
     <% end %>
   <% end %>
+</div>
 <% end %>

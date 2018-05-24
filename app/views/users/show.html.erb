@@ -5,7 +5,9 @@
 <% else %>
   <%= link_to 'Log out', root_path %>
 <% end %>
-<% @gifs.each do |gif| %>
-  <%= gif.category.name %>
-  <img src="<%=gif.image_path%>" alt='picture'>
-<% end %>
+<div class="gif-container">  
+  <% @gifs.each do |gif| %>
+    <%= gif.category.name %>
+    <img src="<%=gif.image_path%>" alt='picture' class='gif-size'>
+  <% end %>
+</div>
