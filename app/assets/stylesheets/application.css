@@ -11,7 +11,7 @@ body {
   height: 800px;
   display: flex;
   background-size: 400px 600px;
-  background-image: url('tulip-collage.jpg');
+  background-image: url(<%= asset_path('tulip-collage.jpg')%>);
 }
 
 .home-container {
