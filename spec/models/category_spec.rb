@@ -11,13 +11,18 @@ describe Category, type: :model do
   end
 
   describe 'class methods' do
-    describe '.ordered' do
-      category1 = Category.create!(name: 'aardvarks')
-      category4 = Category.create!(name: 'zebras')
-      category2 = Category.create!(name: 'bats')
-      category3 = Category.create!(name: 'vampires')
 
-      expect(Category.ordered).to eq [category1, category2, category3, category4]
+    context '.ordered' do
+      it 'should order collection by name' do
+        category1 = Category.create!(name: 'aardvarks')
+        category4 = Category.create!(name: 'zebras')
+        category2 = Category.create!(name: 'bats')
+        category3 = Category.create!(name: 'vampires')
+
+        expect(Category.ordered).to eq [category1, category2, category3, category4]
+      end
     end
+
+
   end
 end
