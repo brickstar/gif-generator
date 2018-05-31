@@ -4,8 +4,8 @@ describe 'User' do
   let(:user) { User.create(username: 'pearl', password: 'blank', role: 0) }
   # block won't execute until user is called - way around this is to use let!
   describe 'visits gifs index page' do
-    let!(:category) { FactoryBot.create(:category) }
-    let!(:gif) { FactoryBot.create(:gif) }
+    let!(:category) { Category.create(name: 'cats')}
+    let!(:gif) { category.gifs.create(image_path: 'www.example.gif',) }
     # scoping this variable to this describe block - only avail in this describe block
     # describe and context creates the hierarchy, cannot use let inside it block
 

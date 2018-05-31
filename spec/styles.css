@@ -1,0 +1,79 @@
+body {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(3, 33.33333%);
+  justify-content: start;
+  color: white;
+}
+
+h4 {
+  align-self: center;
+}
+
+.squares {
+  display: flex;
+}
+
+section {
+  display: flex;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 1 / 2;
+  background-color: rgb(61, 222, 52);
+}
+
+.rectangle {
+  justify-content: center;
+}
+
+.profile {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  background-color: rgb(117, 132, 179);
+}
+
+article {
+  background-image: url('https://images.pexels.com/photos/707049/pexels-photo-707049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-size: 600px 800px;
+  grid-column: 4 / 6;
+  grid-row: 1 / 4;
+  vertical-align: top;
+}
+
+.experience {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: rgb(191, 37, 177);
+}
+
+.education {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: rgb(230, 122, 169);
+}
+
+.blog {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  background-color: rgb(75, 7, 201);
+}
+
+.social-menu {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  background-color: rgb(213, 68, 84);
+}
+
+.contact {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  background-color: rgb(22, 130, 64)
+}
+
+.portfolio {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  background-color: rgb(187, 200, 238)
+}

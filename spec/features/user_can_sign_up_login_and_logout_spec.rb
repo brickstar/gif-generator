@@ -39,9 +39,9 @@ describe 'User' do
       end
 
       expect(current_path).to eq(user_path(user))
-      expect(page).to have_link('Log out')
+      expect(page).to have_link('Logout')
 
-      click_on 'Log out'
+      click_on 'Logout'
       expect(current_path).to eq(root_path)
     end
   end

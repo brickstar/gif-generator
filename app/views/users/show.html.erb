@@ -8,7 +8,8 @@
 <div class="gif-container">
   <div class='gif-total'><% @gifs.each do |gif| %>
     <section>
-      <h4><%= gif.category.name %></h4></br>
+      <p class='category-name'><%= gif.category.name %></p></br>
+      <%= button_to 'Remove From Favorites', favorite_path(current_user), method: 'delete' %>
       <img src=<%= gif.image_path %>></br></br></br></br>
     </section>
   <% end %>
