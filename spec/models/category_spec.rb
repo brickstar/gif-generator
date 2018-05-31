@@ -10,7 +10,7 @@ describe Category, type: :model do
     it { should have_many(:gifs) }
   end
 
-  describe 'instance methods' do
+  describe 'class methods' do
     describe '.ordered' do
       category1 = Category.create!(name: 'aardvarks')
       category4 = Category.create!(name: 'zebras')
