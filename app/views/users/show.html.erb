@@ -9,7 +9,7 @@
   <div class='gif-total'><% @gifs.each do |gif| %>
     <section>
       <p class='category-name'><%= gif.category.name %></p></br>
-      <%= button_to 'Remove From Favorites', favorite_path(current_user), method: 'delete' %>
+      <%= button_to 'Remove From Favorites', user_favorite_path(current_user, gif_id: gif.id), method: 'delete' %>
       <img src=<%= gif.image_path %>></br></br></br></br>
     </section>
   <% end %>

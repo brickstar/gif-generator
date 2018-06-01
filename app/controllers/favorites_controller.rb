@@ -6,8 +6,9 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    Favorite.delete(params[:id])
+    user = User.find(params[:user_id])
+    favorite = user.favorites.for_gif(params[:gif_id])
+    favorite.destroy
     redirect_to user_path(user)
   end
 end
